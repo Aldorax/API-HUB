@@ -37,5 +37,13 @@ class Settings:
     # Platform
     PLATFORM_COMMISSION_PERCENT: float = float(os.getenv("PLATFORM_COMMISSION_PERCENT", "20.0"))
 
+    # Magic Link
+    MAGIC_LINK_URL: str = os.getenv("MAGIC_LINK_URL", "http://localhost:3000/auth/verify")
+    MAGIC_LINK_EXPIRY_MINUTES: int = int(os.getenv("MAGIC_LINK_EXPIRY_MINUTES", "15"))
+
+    # Resend
+    RESEND_API_KEY: str = os.getenv("RESEND_API_KEY", "")
+    FROM_EMAIL: str = os.getenv("FROM_EMAIL", "noreply@.seisentinel.tech")
+
 
 settings = Settings()

@@ -64,6 +64,9 @@ dependencies = [
 
     # API Documentation
     "scalar-fastapi>=0.1.0", # <-- ADD THIS LINE
+
+    # Greenlet (Needed to utilize sqlalchemy properly)
+    "greenlet>=3.0.0",
 ]
 
 [project.optional-dependencies]

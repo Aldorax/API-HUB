@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from src.config import settings
+from src.api.v1 import auth, users  # import auth router, and users
 from scalar_fastapi import get_scalar_api_reference
 
 # Create FastAPI app
@@ -20,6 +21,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include routers
+app.include_router(auth.router, prefix="/api/v1")
+app.include_router(users.router, prefix="/api/v1")  # add this line
 
 
 # Health check endpoint
